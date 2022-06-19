@@ -1,0 +1,218 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    background: linear-gradient(10deg,rgb(0,0,0),#001931d3);
+}
+
+.shadow
+{
+    position: fixed;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 90vh;
+    flex-direction: column;
+    gap: 30px;
+    background: #1d2b3a;
+    box-shadow: 0px 10px #00dfc4,
+    10px 10px #00dfc4,
+    5px 10px #00dfc4,
+    10px 10px #00dfc4,
+    0px -10px #00dfc4,
+    -10px -10px #00dfc4,
+    -5px -10px #00dfc4,
+    -10px -10px #00dfc4;
+    filter: blur(10px);
+}
+
+.bigdiv
+{
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 90vh;
+    flex-direction: column;
+    gap: 30px;
+    background: #1d2b3a;
+    box-shadow: 0px 10px #00dfc4,
+    10px 10px #00dfc4,
+    5px 10px #00dfc4,
+    10px 10px #00dfc4,
+    0px -10px #00dfc4,
+    -10px -10px #00dfc4,
+    -5px -10px #00dfc4,
+    -10px -10px #00dfc4;
+}
+
+.inputbox
+{
+    position: relative;
+    width: 250px;
+}
+
+.inputbox input
+{
+    width: 100%;
+    padding: 10px;
+    border: 1pxsolid rgba(255, 255, 255, 0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.4s;
+}
+
+.inputbox span
+{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span
+{
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.2em;
+}
+
+.inputbox:nth-child(2) input:valid ~ span,
+.inputbox:nth-child(2) input:focus ~ span
+{
+    background: #00dfc4;
+    color: #1d2b3a;
+    border-radius: 2px;
+}
+.inputbox input:valid,
+.inputbox input:focus
+{
+    border: 1px solid #00dfc4;
+}
+
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container a
+{
+    position: relative;
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid #00dfc4;
+    margin: 10px;
+    text-transform: uppercase;
+    font-weight: 200;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color:#fff;
+    -webkit-box-reflect: below 0px linear-gradient(transparent,#0002);
+    transition: 0.2s;
+    transition-delay: 0s;
+}
+
+.container a:hover
+{
+    transition-delay: 0.6s;
+    color: #000;
+    box-shadow: 0 0 10px #00dfc4,
+    0 0 20px #00dfc4,
+    0 0 40px #00dfc4,
+    0 0 80px #00dfc4,
+    0 0 160px #00dfc4;
+}
+
+.container a span 
+{
+    position: relative;
+    z-index: 100;
+}
+
+.container a:nth-child(2)
+{
+    filter: hue-rotate(80deg);
+}
+
+.container a::before
+{
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 49%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #00dfc4;
+    box-shadow: 5px -8px 0 #00dfc4,
+                5px 8px 0 #00dfc4;
+    transition: width 0.2s, left 0.2s, height 0.2s, box-shadow 0.2s;
+    transition-delay: 0.5s,0.2s,0s,0s;
+}
+
+.container a:hover::before
+{
+    width: 60%;
+    height: 108%;
+    left: -2px;
+    box-shadow: 5px 0 0 #00dfc4,
+                5px 0 0 #00dfc4;
+    transition-delay: 0s,0.2s,0.5s,0.5s;
+}
+
+.container a::after
+{
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 49%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #00dfc4;
+    box-shadow: -5px -8px 0 #00dfc4,
+                -5px 8px 0 #00dfc4;
+    transition: width 0.2s, right 0.2s, height 0.2s, box-shadow 0.2s;
+    transition-delay: 0.5s,0.2s,0s,0s;
+}
+
+.container a:hover::after
+{
+    width: 60%;
+    height: 108%;
+    right: -2px;
+    box-shadow: -5px 0 0 #00dfc4,
+                -5px 0 0 #00dfc4;
+    transition-delay: 0s,0.2s,0.5s,0.5s;
+}
